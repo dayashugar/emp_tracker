@@ -5,8 +5,8 @@ tracked_data = {
     "Arnold" : 0,
     "Harry" : 0,
     "Jhon" : 0,
-    "Amanda" : 0,
-    "Kelly" : 0,
+    "Aman" : 0,
+    "Karan" : 0,
 }
 
 def credit_salary(emp_name,salary):
