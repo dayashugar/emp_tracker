@@ -26,7 +26,17 @@ for i in range(10):
     credit_salary(emp_name=random_emp_name, salary=random_salary)
     credit_travel_expense(emp_name=random_emp_name, expense=random_travel)
 
-print("Plotting employee salary and travel expenses as grouped Bar-Graph...")
+print("\nExpense as percentage of salary:")
+for emp_name, values in tracked_data.items():
+    salary = values["salary"]
+    travel = values["travel"]
+    if salary:
+        percent = travel / salary * 100
+        print(f"  {emp_name}: {percent:.2f}% of salary spent on travel")
+    else:
+        print(f"  {emp_name}: salary is 0, cannot compute percentage")
+
+print("\nPlotting employee salary and travel expenses as grouped Bar-Graph...")
 plotter.plot_salary_and_travel(
     x_axis=list(tracked_data.keys()),
     salaries=[tracked_data[name]["salary"] for name in tracked_data],
